@@ -1,0 +1,16 @@
+yc_token                  = ""
+yc_cloud_id               = ""
+yc_folder_id              = ""
+yc_zone                   = "ru-central1-b"
+yc_instance_name          = "gitlab-runner"
+yc_network_name           = "gitlab-runner-network"
+yc_subnet_name            = "gitlab-runner-subnet"
+yc_instance_user_name     = "ubuntu"
+public_key_path           = ".pub"
+private_key_path          = ""
+disk_name                 = "gitlab-runner-disk"
+disk_type                 = "network-ssd"
+disk_size                 = 30
+ubuntu_image_id           = "" # Ubuntu 22.04 LTS
+gitlab_url                = "https://osipov.gitlab.yandexcloud.net/"
+gitlab_registration_token = ""
