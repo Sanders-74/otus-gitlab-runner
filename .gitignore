@@ -60,3 +60,5 @@ setup_unsecure.sh
 !config/.gitkeep
 config/*.yaml
 config/*.toml
+examples/*.yaml
+examples/*.toml
