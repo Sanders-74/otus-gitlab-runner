@@ -14,3 +14,12 @@ check-projects:
 
 check-runners:
 	python3 src/check_runners.py
+
+plan:
+	cd infra && terraform plan
+
+apply:
+	cd infra && terraform apply -auto-approve
+
+destroy:
+	cd infra && terraform destroy -auto-approve
