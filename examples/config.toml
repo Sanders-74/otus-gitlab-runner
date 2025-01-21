@@ -1,0 +1,68 @@
+# Максимальное количество одновременно выполняемых задач
+concurrent = 1
+
+# Интервал проверки новых задач (0 означает использование значения по умолчанию)
+check_interval = 0
+
+# Максимальное время жизни соединения с GitLab
+connection_max_age = "15m0s"
+
+# Тайм-аут для корректного завершения работы (0 - использовать значение по умолчанию)
+shutdown_timeout = 0
+
+# Настройки сервера сессий
+[session_server]
+  # Время жизни сессии в секундах
+  session_timeout = 1800
+
+# Конфигурация раннера (может быть несколько секций)
+[[runners]]
+  # Имя раннера
+  name = "docker-runner"
+  # URL GitLab сервера
+  url = "https://osipov.gitlab.yandexcloud.net"
+  # Уникальный идентификатор раннера
+  id = 3
+  # Токен аутентификации раннера
+  token = ""
+  # Дата получения токена
+  token_obtained_at = 2025-01-20T23:23:49Z
+  # Дата истечения токена (0001-01-01 означает "никогда")
+  token_expires_at = 0001-01-01T00:00:00Z
+  # Тип исполнителя (в данном случае Docker)
+  executor = "docker"
+
+  # Настройки пользовательской директории сборки
+  [runners.custom_build_dir]
+
+  # Настройки кэширования
+  [runners.cache]
+    # Максимальный размер загружаемого архива (0 - без ограничений)
+    MaxUploadedArchiveSize = 0
+    # Настройки кэширования в S3
+    [runners.cache.s3]
+    # Настройки кэширования в Google Cloud Storage
+    [runners.cache.gcs]
+    # Настройки кэширования в Azure
+    [runners.cache.azure]
+
+  # Настройки Docker
+  [runners.docker]
+    # Проверка TLS сертификатов
+    tls_verify = false
+    # Базовый Docker образ
+    image = "python:3.11.4-slim-buster"
+    # Запуск контейнера в привилегированном режиме
+    privileged = false
+    # Отключение перезаписи точки входа
+    disable_entrypoint_overwrite = false
+    # Отключение OOM killer
+    oom_kill_disable = false
+    # Отключение кэширования
+    disable_cache = false
+    # Подключаемые тома
+    volumes = ["/cache"]
+    # Размер разделяемой памяти (0 - по умолчанию)
+    shm_size = 0
+    # MTU сети (0 - по умолчанию)
+    network_mtu = 0
