@@ -4,4 +4,4 @@ stages:
 test-job:
   stage: test
   script:
-    - echo "Running a job CI_JOB_ID in $CI_BUILDS_DIR under $CI_DEPLOY_USER  "
+    - echo "Running a job $CI_JOB_ID in $CI_BUILDS_DIR under $CI_DEPLOY_USER  "
